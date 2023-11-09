@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(kepek/outer-space.jpg);
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 100px 2fr 2fr 2fr 1fr;
+    grid-template-areas: 
+        "h h h h h"
+        "n n n n n"
+        "b a a a j"
+        "f f f f f";
+}
+
+header {
+    grid-area: h;
+}
+
+article {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+nav {
+    grid-area: n;
+}
+
+footer {
+    grid-area: f;
+}
+
+aside#bal{
+    grid-area: b;
+}
+
+aside#jobb{
+    grid-area: j;
+}
+
+header, nav, article, footer, aside {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* menü kialakítása */
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    background-color: cadetblue;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: yellow;
+    font-weight: bold;
+}
+
+header, nav, aside, article, footer {
+    border: solid 1px white;
+}
+
+/* TABLET nézet - reszponzivitás kialakítása */
+@media only screen and (max-width: 700px) {
+    body, main {
+      /* background-color: rgb (230, 173, 219); */
+      width: 100%;
+    }
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "h h"
+            "n n"
+            "b j"
+            "a a"
+            "f f";
+    }
+  }
+  
+/* MOBIL nézet - reszponzivitás kialakítása */
+@media only screen and (max-width: 400px) {
+    main {
+        font-size: 12px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "n"
+            "a"
+            "b"
+            "j"
+            "f";
+    }
+    
+    nav ul {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+  }
+
+  img {
+    width: 200px;
+  }
+
+.kepek {
+    border: solid 1px white;
+}
